@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+    
+
+
+
+{% block content %}
+<style>
+    table,tr,th,td{
+        border: black solid 2px;
+        
+    }
+   
+</style>
+<table>
+    <tr>
+        <th>Full_name</th>
+        <th>Mobile_number</th>
+        <th>Address</th>
+        <th>age</th>
+        <!-- <th>Selected_course</th> -->
+        <th>Update</th>
+        <th>Delete</th>
+        
+    </tr>
+
+  
+        {% for i in prolist %}
+        <tr>
+            <td>{{i.Full_name}}</td>
+            <td>{{i.Mobile_number}}</td>
+            <td>{{i.Address}}</td>
+            <td>{{i.Age}}</td>
+            <!-- <td>{{i.Selected_course}}</td> -->
+            <td>
+                <a href="{% url 'customerupdate' i.id %}">
+                <button type="button">Update</button></td></a></td>
+            <td>
+                <a href= "{% url 'customerdelete' i.id %}" >
+                    <button type="button">Delete</button>
+                </a>
+            </td>
+               
+           
+        </tr>
+        {% endfor %}
+
+</table>
+{% endblock %}

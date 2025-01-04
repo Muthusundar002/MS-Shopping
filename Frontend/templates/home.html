@@ -1,0 +1,38 @@
+{%extends 'base.html%}
+
+
+<h1> welcome</h1>
+
+
+{% block content %}
+    <h1>Welcome</h1>
+    <h2>Django Project</h2>
+    <table >
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Score</th>
+            <th>Eligible</th>
+        </tr>
+        
+            {% for i in user1%}
+        <tr>
+            <td>{{i.Name}}</td>
+            <td>{{i.Loc}}</td>
+            <td>{{i.Score}}</td>
+            <td>
+                {% if i.score >= 90 %}
+                <p>Eligible</p>
+                {% else %}
+                <p>Not Eligible</p>
+                {% endif %}
+            </td>
+            </tr>
+            
+           
+        {%endfor%}
+
+    
+</table>
+    {% endblock %}
+

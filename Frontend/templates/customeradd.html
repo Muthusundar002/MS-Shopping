@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% block content %}
+<style>
+  form{
+    position: absolute;
+    left: 40%;
+    top: 20%;
+    border: black solid 2px;
+    padding: 30px;
+
+  }
+  form label{
+    display: block;
+  }
+  h1{
+    font-style: inherit;
+    text-align: center;
+  }
+</style>
+<h1>User Form </h1>
+<form method="POST">
+  {% csrf_token%}
+  {{cusform}}
+  <button>Submit</button>
+</form>
+
+{% endblock %}
